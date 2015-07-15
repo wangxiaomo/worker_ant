@@ -18,7 +18,7 @@ def get_cn_proxy_list():
     ips = []
     for tr in trs:
         items = tr.xpath("./td/text()")
-        ip = "http:%s:%s" % (strip(items[0]), strip(items[1]))
+        ip = "http://%s:%s" % (strip(items[0]), strip(items[1]))
         ips.append(ip)
     return ips
 
@@ -32,7 +32,7 @@ def get_kuaidaili_list():
         trs = doc.xpath("//table/tbody/tr")
         for tr in trs:
             items = tr.xpath("./td/text()")
-            ip = "http:%s:%s" % (strip(items[0]), strip(items[1]))
+            ip = "http://%s:%s" % (strip(items[0]), strip(items[1]))
             ips.append(ip)
     return ips
 
@@ -45,7 +45,7 @@ def get_haodaili_guonei_list():
         trs = doc.xpath("//table[@class='proxy_table']/tr")
         for tr in trs[1:]:
             items = tr.xpath("./td/text()")
-            ip = "http:%s:%s" % (strip(items[0]), strip(items[1]))
+            ip = "http://%s:%s" % (strip(items[0]), strip(items[1]))
             ips.append(ip)
     return ips
 
@@ -58,7 +58,7 @@ def get_haodaili_guowai_list():
         trs = doc.xpath("//table[@class='proxy_table']/tr")
         for tr in trs[1:]:
             items = tr.xpath("./td/text()")
-            ip = "http:%s:%s" % (strip(items[0]), strip(items[1]))
+            ip = "http://%s:%s" % (strip(items[0]), strip(items[1]))
             ips.append(ip)
     return ips
 
